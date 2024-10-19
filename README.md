@@ -36,7 +36,8 @@ A boilerplate for building RESTful APIs using **Express** and **TypeScript**.
 
    ```bash
    # Clone the repository
-   git clone https://github.com/shubhu2002/express-typescript-boilerplate.git
+   git clone https://github.com/shubhu2002/express-ts-boilerplate.git
+
    # Goto the cloned project folder.
    cd express-typescript-boilerplate;
    ```
