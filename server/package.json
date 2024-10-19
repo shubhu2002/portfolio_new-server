@@ -1,0 +1,42 @@
+{
+  "name": "express-ts-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for building RESTful APIs using Express and TypeScript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/src/app.js",
+    "build": "tsc --project tsconfig.json",
+    "dev": "concurrently \"tsc --watch --project tsconfig.json\" \"nodemon dist/app.js\"",
+    "lint": "eslint './src/**/*.{ts,js}'",
+    "format": "prettier --write './src/**/*.{ts,js,json}'"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "boilerplate",
+    "REST API"
+  ],
+  "author": "Shubhanshu Saxena",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.7",
+    "concurrently": "^9.0.1",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
