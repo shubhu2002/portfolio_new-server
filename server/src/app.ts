@@ -1,4 +1,5 @@
 import express, { type Request, type Response } from "express";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -28,4 +29,6 @@ app.listen(process.env.PORT || 5000, () => {
   console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
 
-export default app;
+export default (req: VercelRequest, res: VercelResponse) => {
+  return app(req as Request, res as any);
+};
