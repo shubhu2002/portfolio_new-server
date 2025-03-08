@@ -1,24 +1,31 @@
-import express, { type Request, type Response } from 'express';
-import dotenv from "dotenv"
+import express, { type Request, type Response } from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 
-import dummyRoutes from "./routes/dummy.route.js"
+import MongooseConnect from "./mongoose/index.js";
+
+import projectRouter from "./routes/project.route.js";
+import skillRouter from "./routes/skill.route.js";
+import dummyRouter from "./routes/dummy.route.js"
 
 dotenv.config();
 
 const app = express();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-app.get('/', (req: Request, res: Response) => {
-    res.send("Welcome to the server !!")
+app.get("/", (req: Request, res: Response) => {
+  res.send("Welcome to the tourice server !!");
 });
 
-app.use("/dummy", dummyRoutes)
+app.use("/api/v1/projects", projectRouter);
+app.use("/api/v1/skills", skillRouter);
+app.use("/api/v1/dummy", dummyRouter);
 
 app.listen(process.env.PORT || 5000, () => {
-    console.log(`Server is running on http://localhost:${process.env.PORT}`);
+  MongooseConnect();
+  console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
 
 export default app;
